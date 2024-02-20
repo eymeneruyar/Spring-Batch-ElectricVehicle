@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    username: postgres
+    password: 198658
+    url: jdbc:postgresql://localhost:5432/batch_examples
+    driver-class-name: org.postgresql.Driver
+  batch:
+    job:
+      enabled: false
+    jdbc:
+      initialize-schema: always
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+batch-parameter:
+  step:
+    fetch-size: 5000
+    chunk-size: 5000
+    min-pool-size: 250
+    max-pool-size: 250
+  task:
+    min-pool-size: 250
+    max-pool-size: 250
